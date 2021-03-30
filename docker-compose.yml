@@ -1,9 +1,4 @@
 version: "3.7"
-networks:
-  netname:
-    ipam:
-      config:
-        - subnet: 172.20.0.0/24
 services:
   database_ignite:
     image: postgres
@@ -11,16 +6,12 @@ services:
     restart: always
     ports:
       - 5432:5432
-    networks:
-      netname:
-        ipv4_address: 172.20.0.2
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=ignite
       - POSTGRES_DB=rentalx
     volumes:
       - pgdata:/data/postgres
-
   app:
     build: .
     container_name: rentalx
@@ -29,9 +20,6 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
-    networks:
-      netname:
-        ipv4_address: 172.20.0.3
 
 volumes:
   pgdata:
