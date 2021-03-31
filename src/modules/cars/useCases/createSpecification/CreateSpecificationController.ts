@@ -7,11 +7,11 @@ class CreateSpecificationController {
   handle(request: Request, response: Response): Response {
     const { name, description } = request.body;
 
-    const creatSpecificationUseCase = container.resolve(
+    const createSpecificationUseCase = container.resolve(
       CreateSpecificationUseCase
     );
 
-    creatSpecificationUseCase.execute({ name, description });
+    createSpecificationUseCase.execute({ name, description });
 
     return response.status(201).send();
   }
