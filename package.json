@@ -1,14 +1,17 @@
 {
-  "name": "chapper",
+  "name": "rentx",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Rodrigo Dematei de Freitas <rodrigo@solprog.com.br>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+    "lint:fix": "eslint --fix . --ext ts,tsx"
   },
   "dependencies": {
     "csv-parse": "^4.15.3",
+    "dbffile": "^1.5.0",
     "express": "^4.17.1",
     "multer": "^1.4.2",
     "pg": "^8.5.1",

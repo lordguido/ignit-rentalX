@@ -9,7 +9,6 @@ const createSpecificationController = new CreateSpecificationController();
 const listSpecificationsController = new ListSpecificationsController();
 
 specificationsRoutes.post("/", createSpecificationController.handle);
-
 specificationsRoutes.get("/", listSpecificationsController.handle);
 
 export { specificationsRoutes };
